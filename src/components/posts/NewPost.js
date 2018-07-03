@@ -31,8 +31,7 @@ export class NewPost extends Component {
         this.setState({
             title: "",
             body: "",
-            // TODO: show this as regression
-            // errorMessage: "",
+            errorMessage: "",
         })
     }
 

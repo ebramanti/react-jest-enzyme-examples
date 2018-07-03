@@ -30,7 +30,7 @@ export class Container extends Component {
         const { posts } = this.state;
         return [
             <NewPost key="new-post" onPostCreated={addPost} />,
-            posts.length ?
+            posts.length > 0 ?
                 <PostsList key="posts-list" posts={posts} onPostDeleted={this.deletePost} /> :
                 null
         ];

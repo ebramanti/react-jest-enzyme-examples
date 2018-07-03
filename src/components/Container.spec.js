@@ -1,12 +1,18 @@
 import React from "react";
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
 import { Container } from "./Container";
 
 describe("Container", () => {
     it("renders a default posts page", () => {
-        const wrapper = mount(<Container/>);
+        const wrapper = shallow(<Container/>);
         expect(wrapper).toMatchSnapshot();
     });
+
+    describe("no posts provided", () => {
+        const wrapper = shallow(<Container/>);
+        wrapper.setState({ posts: [] });
+        expect(wrapper).toMatchSnapshot();
+    })
 
     describe("#addPost", () => {
         it("adds post to top-level state", () => {

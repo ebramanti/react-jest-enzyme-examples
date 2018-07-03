@@ -63,6 +63,16 @@ describe("NewPost", () => {
         });
 
         describe("valid input provided", () => {
+            describe("with prior error", () => {
+                it("clears error", () => {
+                    const wrapper = shallow(<NewPost onPostCreated={jest.fn()}/>)
+                    wrapper.setState({ errorMessage: "Failz" });
+                    wrapper.setState({ title: "Example Title", body: "Example Body" });
+                    wrapper.find("button").simulate("click");
+                    expect(wrapper.state("errorMessage")).toBe("");
+                });
+            });
+
             it("fires onPostCreated event", () => {
                 const mockedEvent = jest.fn();
                 const wrapper = mount(<NewPost onPostCreated={mockedEvent} />);
@@ -71,6 +81,7 @@ describe("NewPost", () => {
                 expect(wrapper.state("errorMessage")).toBe("");
                 expect(mockedEvent.mock.calls.length).toBe(1);
             });
+
             it("resets form values to empty", () => {
                 const mockedEvent = jest.fn();
                 const wrapper = mount(<NewPost onPostCreated={mockedEvent} />);

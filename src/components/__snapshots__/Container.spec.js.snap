@@ -1,87 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Container renders a default posts page 1`] = `
-<Container>
+exports[` 1`] = `
+Array [
   <NewPost
     key="new-post"
     onPostCreated={[Function]}
-  >
-    <table>
-      <tbody>
-        <tr>
-          <td>
-            <input
-              onChange={[Function]}
-              type="text"
-              value=""
-            />
-          </td>
-          <td>
-            <input
-              onChange={[Function]}
-              type="text"
-              value=""
-            />
-          </td>
-          <td>
-            <button
-              onClick={[Function]}
-            >
-              Create Post
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </NewPost>
+/>,
+  "",
+]
+`;
+
+exports[`Container renders a default posts page 1`] = `
+Array [
+  <NewPost
+    key="new-post"
+    onPostCreated={[Function]}
+/>,
   <PostsList
     key="posts-list"
     onPostDeleted={[Function]}
     posts={
-      Array [
-        Object {
-          "body": "World",
-          "title": "Hello",
-        },
-      ]
+        Array [
+            Object {
+              "body": "World",
+              "title": "Hello",
+            },
+          ]
     }
-  >
-    <table>
-      <tbody>
-        <Post
-          body="World"
-          index={0}
-          key="Hello-World-0"
-          onPostDeleted={[Function]}
-          title="Hello"
-        >
-          <tr>
-            <td>
-              Hello
-            </td>
-            <td>
-              World
-            </td>
-            <td>
-              <button
-                id="reverse"
-                onClick={[Function]}
-              >
-                Reverse Title
-              </button>
-            </td>
-            <td>
-              <button
-                id="delete"
-                onClick={[Function]}
-              >
-                Delete Post
-              </button>
-            </td>
-          </tr>
-        </Post>
-      </tbody>
-    </table>
-  </PostsList>
-</Container>
+/>,
+]
 `;
